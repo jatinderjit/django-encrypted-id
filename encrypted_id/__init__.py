@@ -55,6 +55,9 @@ def encode(the_id, sub_key):
 
 
 def decode(e, sub_key):
+    if e is None:
+        raise EncryptedIDDecodeError()
+
     if isinstance(e, basestring):
         e = bytes(e.encode("ascii"))
 
